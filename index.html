@@ -912,6 +912,35 @@ iframe {
     }
 }
 
+  /* Закреплённая шапка сайта */
+header#top {
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+    width: 100%;
+    background: #0a0a0a;
+    border-bottom: 1px solid #242428;
+}
+
+/* Чтобы логотип и меню были на одном уровне */
+header#top .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Кнопка меню всегда доступна для нажатия */
+#burgerBtn {
+    position: relative;
+    z-index: 2002;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+/* Открытое меню находится поверх содержимого сайта */
+#mobileMenu {
+    z-index: 2001;
+}
   
 </style>
 </head>
