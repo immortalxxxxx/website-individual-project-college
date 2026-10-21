@@ -819,6 +819,49 @@ iframe {
 }
 
   
+@media (max-width: 768px) {
+    footer .foot-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    footer .foot-links {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 16px !important;
+        width: 100%;
+        min-width: 0;
+    }
+
+    footer .foot-links a {
+        display: block;
+        width: fit-content;
+        max-width: 100%;
+        white-space: normal;
+        overflow-wrap: break-word;
+        font-size: 16px;
+    }
+
+    footer .foot-status,
+    footer .foot-copy {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+}
+
+  .burger {
+    position: relative;
+    z-index: 1002;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+  
 </style>
 </head>
 <body>
