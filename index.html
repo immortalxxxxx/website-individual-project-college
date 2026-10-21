@@ -640,6 +640,34 @@ footer{ padding:50px 0; }
     }
 }
 
+  /* Пульсация индикатора Digital Guardian */
+.dot {
+    display: inline-block;
+    flex-shrink: 0;
+    animation: guardian-pulse 2s ease-out infinite;
+    will-change: box-shadow;
+}
+
+@keyframes guardian-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 36, 88, 0.65);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 36, 88, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 36, 88, 0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dot {
+        animation: none;
+    }
+}
+  
 </style>
 </head>
 <body>
@@ -1081,5 +1109,32 @@ footer{ padding:50px 0; }
   });
 })();
 </script>
+
+  <script>
+const burgerBtn = document.getElementById('burgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+if (burgerBtn && mobileMenu) {
+    burgerBtn.addEventListener('click', () => {
+        const isOpen = mobileMenu.style.display !== 'none';
+
+        mobileMenu.style.display = isOpen ? 'none' : 'block';
+        burgerBtn.setAttribute('aria-expanded', String(!isOpen));
+        burgerBtn.setAttribute(
+            'aria-label',
+            isOpen ? 'Открыть меню' : 'Закрыть меню'
+        );
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.style.display = 'none';
+            burgerBtn.setAttribute('aria-expanded', 'false');
+            burgerBtn.setAttribute('aria-label', 'Открыть меню');
+        });
+    });
+}
+</script>
+  
 </body>
 </html>
