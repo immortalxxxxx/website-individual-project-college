@@ -844,7 +844,7 @@ iframe {
 </header>
 
 <!-- mobile menu -->
-<div id="mobileMenu" style="display:none; background:var(--bg-alt); border-bottom:1px solid var(--line-soft);">
+<div id="mobileMenu" style="display: none;" background:var(--bg-alt); border-bottom:1px solid var(--line-soft);">
   <div class="wrap" style="padding:20px 32px; display:flex; flex-direction:column; gap:18px;">
     <a href="#anketa">Анкетирование</a>
     <a href="#solution">Решение</a>
@@ -1130,16 +1130,24 @@ iframe {
   "use strict";
 
   /* ---------- Mobile menu ---------- */
-  var burger = document.getElementById('burgerBtn');
-  var mobileMenu = document.getElementById('mobileMenu');
-  burger.addEventListener('click', function(){
-    var isOpen = mobileMenu.style.display === 'block';
-    mobileMenu.style.display = isOpen ? 'none' : 'block';
-    burger.setAttribute('aria-expanded', String(!isOpen));
-  });
-  mobileMenu.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){ mobileMenu.style.display = 'none'; });
-  });
+ var burger = document.getElementById('burgerBtn');
+var mobileMenu = document.getElementById('mobileMenu');
+
+if (burger && mobileMenu) {
+    burger.addEventListener('click', function () {
+        var isOpen = mobileMenu.style.display !== 'none';
+
+        mobileMenu.style.display = isOpen ? 'none' : 'block';
+        burger.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            mobileMenu.style.display = 'none';
+            burger.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
 
   /* ---------- ROI Calculator ----------
      Константы:
