@@ -688,6 +688,109 @@ iframe {
 * {
     box-sizing: border-box;
 }
+
+
+  /* FIX: адаптация Digital Guardian для телефонов */
+@media screen and (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    /* Основные контейнеры */
+    .wrap {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    section {
+        max-width: 100%;
+    }
+
+    /* Шапка и логотип */
+    header#top {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    header#top .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 16px 20px;
+    }
+
+    .logo {
+        min-width: 0;
+        max-width: calc(100% - 60px);
+        font-size: clamp(16px, 4.5vw, 22px);
+        white-space: nowrap;
+    }
+
+    .burger {
+        flex: 0 0 44px;
+        width: 44px;
+        padding: 8px;
+    }
+
+    .nav-links,
+    .header-cta {
+        display: none;
+    }
+
+    /* Главный заголовок */
+    h1 {
+        max-width: 100%;
+        font-size: clamp(36px, 9vw, 52px);
+        line-height: 1.08;
+        overflow-wrap: anywhere;
+    }
+
+    /* Обычный текст */
+    p {
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+
+    /* Кнопки */
+    .btn {
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    /* Сетки и карточки */
+    .grid,
+    .cards,
+    .features,
+    .stats {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 100%;
+    }
+
+    /* Калькулятор и формы */
+    input,
+    select,
+    textarea {
+        max-width: 100%;
+    }
+}
+
   
 </style>
 </head>
