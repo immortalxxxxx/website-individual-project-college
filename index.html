@@ -464,6 +464,127 @@ footer{ padding:50px 0; }
   </div>
 </section>
 
+
+
+<!-- DIGITAL GUARDIAN: DEMO DASHBOARD -->
+<section class="dg-extra dg-reveal" id="dg-dashboard">
+  <p class="dg-status">SYSTEM OVERVIEW / DEMO</p>
+  <h2 class="dg-heading">Панель состояния защиты</h2>
+  <p class="dg-muted">Демонстрационная модель. Показатели не отражают состояние реальной инфраструктуры отеля.</p>
+
+  <div class="dg-grid">
+    <div class="dg-stat">
+      <span class="dg-status">01 / Данные</span>
+      <strong>Защита включена</strong>
+      <p class="dg-muted">Концепция шифрования</p>
+    </div>
+    <div class="dg-stat">
+      <span class="dg-status">02 / Доступ</span>
+      <strong>Контроль активен</strong>
+      <p class="dg-muted">Проверка полномочий</p>
+    </div>
+    <div class="dg-stat">
+      <span class="dg-status">03 / Журнал</span>
+      <strong>Готов к записи</strong>
+      <p class="dg-muted">Условная регистрация событий</p>
+    </div>
+    <div class="dg-stat">
+      <span class="dg-status">04 / Риск</span>
+      <strong id="dg-risk">Не оценён</strong>
+      <p class="dg-muted" id="dg-risk-note">Ожидается демонстрация</p>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE CHECK-IN -->
+<section class="dg-extra dg-reveal" id="dg-checkin">
+  <p class="dg-status">INTERACTIVE SIMULATION / 01</p>
+  <h2 class="dg-heading">Безопасное заселение VIP-гостя</h2>
+  <p class="dg-muted">Пройди четыре этапа демонстрации. Используются только условные данные.</p>
+
+  <div class="dg-panel">
+    <span class="dg-status" id="dg-stage-label">ЭТАП 01 ИЗ 04</span>
+    <h3 id="dg-stage-title">Проверка личности</h3>
+    <p class="dg-muted" id="dg-stage-text">В реальной системе сотрудник проверяет личность гостя по утверждённой процедуре, не раскрывая лишние сведения.</p>
+
+    <div class="dg-progress">
+      <div class="dg-progress-bar" id="dg-progress-bar"></div>
+    </div>
+
+    <div class="dg-steps" aria-label="Этапы заселения">
+      <button class="dg-step active" data-dg-step="0">01 · Личность</button>
+      <button class="dg-step" data-dg-step="1">02 · Доступ</button>
+      <button class="dg-step" data-dg-step="2">03 · Данные</button>
+      <button class="dg-step" data-dg-step="3">04 · Итог</button>
+    </div>
+
+    <p id="dg-stage-result" class="dg-muted" aria-live="polite">Демонстрация готова к запуску.</p>
+    <button class="dg-button" id="dg-next">Начать проверку</button>
+    <button class="dg-button dg-button-secondary" id="dg-reset">Сбросить</button>
+  </div>
+</section>
+
+<!-- SYSTEM FLOW -->
+<section class="dg-extra dg-reveal" id="dg-workflow">
+  <p class="dg-status">PROCESS / 02</p>
+  <h2 class="dg-heading">Как работает система</h2>
+  <p class="dg-muted">Последовательность действий в концепции Digital Guardian.</p>
+
+  <div class="dg-flow">
+    <div class="dg-flow-item">
+      <p class="dg-flow-number">STEP 01</p>
+      <h3>Идентификация</h3>
+      <p class="dg-muted">Подтверждение личности гостя.</p>
+    </div>
+    <div class="dg-flow-item">
+      <p class="dg-flow-number">STEP 02</p>
+      <h3>Контроль доступа</h3>
+      <p class="dg-muted">Проверка полномочий сотрудника.</p>
+    </div>
+    <div class="dg-flow-item">
+      <p class="dg-flow-number">STEP 03</p>
+      <h3>Защита данных</h3>
+      <p class="dg-muted">Обработка только необходимых сведений.</p>
+    </div>
+    <div class="dg-flow-item">
+      <p class="dg-flow-number">STEP 04</p>
+      <h3>Заселение</h3>
+      <p class="dg-muted">Завершение процедуры и фиксация события.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK LINKS AND QR -->
+<section class="dg-extra dg-reveal" id="dg-links">
+  <p class="dg-status">QUICK ACCESS / 03</p>
+  <h2 class="dg-heading">Открыть проект</h2>
+  <p class="dg-muted">Поделись сайтом или открой анкетирование участников.</p>
+
+  <div class="dg-panel dg-qr-layout">
+    <div>
+      <h3>Digital Guardian</h3>
+      <p class="dg-muted">Открой этот сайт на телефоне с помощью QR-кода.</p>
+      <a class="dg-button" id="dg-open-site" href="/">Открыть сайт</a>
+      <button class="dg-button dg-button-secondary" id="dg-copy-link">Копировать ссылку</button>
+      <p class="dg-muted" id="dg-copy-result" aria-live="polite"></p>
+    </div>
+    <div>
+      <img class="dg-qr-image" id="dg-qr" alt="QR-код для перехода на сайт" width="180" height="180">
+      <p class="dg-muted">QR-код ведёт на текущий адрес сайта.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:16px">
+    <!-- ЗАМЕНИ ССЫЛКУ НИЖЕ НА ССЫЛКУ СВОЕЙ GOOGLE ФОРМЫ -->
+    <a class="dg-button" id="dg-survey-link"
+       href="https://forms.gle/BnC3Ed9rdE5Pc16z6"
+       target="_blank" rel="noopener noreferrer">
+      Пройти анкетирование ↗
+    </a>
+  </div>
+</section>
+
+
 <!-- ============ CALCULATOR ============ -->
 <section id="calculator">
   <div class="wrap">
@@ -602,6 +723,7 @@ footer{ padding:50px 0; }
     </div>
   </div>
 </section>
+  
 
 <!-- ============ FOOTER ============ -->
 <footer>
